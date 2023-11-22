@@ -196,3 +196,18 @@ ansible-playbook -i inventory/dev playbook/site.yml
 ```sh
 ansible all -i inventory/dev -m command -a "wireshark --version"
 ```
+
+### Step 5: Provision 2 UAT Web Servers
+
+Use the following parameters when configuring the EC2 Instance for the 2 UAT Web Servers:
+1. Name of the Instance: UAT_1
+2. AMI: Red Hat Enterprise Linux 9 (HVM), SSD Volume Type
+3. New Key Pair: web11
+4. Key Pair Type: RSA
+5. Private Key File Format: .pem
+6. New Secruity Group: Web-Server SG
+7. Inbound Rules: Allow Traffic From Anywhere On Port 80 & Port 22
+
+*Instance Summary for UAT_1 Server*
+
+*Instance Summary for UAT_2 Server*
