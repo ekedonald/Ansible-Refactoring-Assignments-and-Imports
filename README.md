@@ -119,4 +119,70 @@ git chekout main && git pull
 ansible-playbook -i inventory/dev playbook/site.yml
 ```
 
-### Step 4: 
+### Step 4: Create a configuration file `common-del.yml` that will be used to remove the wireshark package and import the configuration to the playbook configuration file
+
+* Create a `common-del.yml` file in the `static-assignments` directory.
+
+```sh
+cd static-assignments && touch common-del.yml
+```
+
+* Paste the code shown below into the `common-del.yml` file
+
+```sh
+---
+- name: update web, nfs and db servers
+  hosts: webservers, nfs, db
+  remote_user: ec2-user
+  become: yes
+  become_user: root
+  tasks:
+  - name: delete wireshark
+    yum:
+      name: wireshark
+      state: removed
+
+- name: update LB server
+  hosts: lb
+  remote_user: ubuntu
+  become: yes
+  become_user: root
+  tasks:
+  - name: delete wireshark
+    apt:
+      name: wireshark-qt
+      state: absent
+      autoremove: yes
+      purge: yes
+      autoclean: yes
+```
+
+* Import the playbook file `common-del.yml` into the `site.yml` file.
+
+```sh
+- import_playbook: ../static-assignments/common-del.yml
+```
+
+* Run the following command to view the changes and add the untracked files in the `ansible-config-mgt` repository:
+
+```sh
+git status
+```
+
+```sh
+git add common-del.yml ../playbooks/site.yml
+```
+
+* Commit the changes made.
+
+```sh
+git commit -m "updates"
+```
+
+* Push the changes to the `ansible-config-mgt` repository.
+
+```sh
+git push
+```
+
+
