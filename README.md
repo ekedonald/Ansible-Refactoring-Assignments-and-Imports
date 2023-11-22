@@ -63,7 +63,7 @@ git checkout -b refactor
 cd playbooks && touch site.yml
 ```
 
-* Create a new folder in root of the repository and name it `static-assignments` (_The **static-assignments** directory is where all other children playboojs will be stored_).
+* Create a new folder in root of the repository and name it `static-assignments` (_The **static-assignments** directory is where all other children playbooks will be stored_).
 
 * Move the `common.yml` file into the `static-assignments` directory.
 
