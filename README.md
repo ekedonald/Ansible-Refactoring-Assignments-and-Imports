@@ -77,4 +77,31 @@ cd playbooks && touch site.yml
 
 * The folder structure of the `ansible-config-mgt` should look like this:
 
-### Step 3: Merge the changes from the refactor 
+### Step 3: Merge the changes from the refactor branch into the main branch
+
+* Run the following command to view the untracked files (i.e. the file and directory you just created):
+
+```sh
+git status
+```
+
+* Add the untracked files and commit the changes using the following command:
+
+```sh
+git add . && git commit -m "updated files and directories"
+```
+
+* Push all changes from the `refactor` branch to the main branch.
+
+```sh
+git push --set-upstream origin refactor
+```
+
+* Go to your `ansible-config-mgt` repository on GitHub and click on the `Compare & pull request` button.
+
+* Click on the `Create pull request` button.
+
+* Click on the `Merge pull request` button.
+
+* Click on the `Confirm merge` button.
+
