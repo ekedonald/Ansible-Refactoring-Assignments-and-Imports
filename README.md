@@ -105,3 +105,10 @@ git push --set-upstream origin refactor
 
 * Click on the `Confirm merge` button.
 
+* Go to the `ansible-config-mgt` on your local machine and run the following command to switch to the `main` branch and pull the changes.
+
+```sh
+git chekout main && git pull
+```
+
+* On your Jenkins console, you will see a build has been triggered.
