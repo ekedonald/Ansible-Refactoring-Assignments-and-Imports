@@ -191,7 +191,7 @@ git push
 ansible-playbook -i inventory/dev playbook/site.yml
 ```
 
-* Run Asnsible Adhoc command to check if wireshark has been removed from the servers.
+* Run Ansible Adhoc command to check if wireshark has been removed from all the servers.
 
 ```sh
 ansible all -i inventory/dev -m command -a "wireshark --version"
