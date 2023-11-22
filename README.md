@@ -119,7 +119,7 @@ git chekout main && git pull
 ansible-playbook -i inventory/dev playbook/site.yml
 ```
 
-### Step 4: Create a configuration file `common-del.yml` that will be used to remove the wireshark package and import the configuration to the playbook configuration file
+### Step 4: Create a playbook configuration file `common-del.yml` that will be used to remove the wireshark package and import the configuration file to the playbook
 
 * Create a `common-del.yml` file in the `static-assignments` directory.
 
@@ -185,4 +185,4 @@ git commit -m "updates"
 git push
 ```
 
-
+* Run the `ansible-playbook` command against the `dev` envinronment
