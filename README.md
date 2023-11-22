@@ -199,7 +199,7 @@ ansible all -i inventory/dev -m command -a "wireshark --version"
 
 ### Step 5: Provision 2 UAT Web Servers
 
-Use the following parameters when configuring the EC2 Instance for the 2 UAT Web Servers:
+Use the following parameters when provisioning the EC2 Instance for the 2 UAT Web Servers:
 1. Name of the Instance: UAT_1
 2. AMI: Red Hat Enterprise Linux 9 (HVM), SSD Volume Type
 3. New Key Pair: web11
