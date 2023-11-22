@@ -77,7 +77,7 @@ cd playbooks && touch site.yml
 
 * The folder structure of the `ansible-config-mgt` should look like this:
 
-### Step 3: Merge the changes from the refactor branch into the main branch
+### Step 3: Merge the changes from the refactor branch into the main branch and run your playbook
 
 * Run the following command to view the untracked files (i.e. the file and directory you just created):
 
@@ -196,6 +196,8 @@ ansible-playbook -i inventory/dev playbook/site.yml
 ```sh
 ansible all -i inventory/dev -m command -a "wireshark --version"
 ```
+
+_**Note**: Stop the EC2 Instances (i.e.Web Server 1 & 2, Database Server and Load Balancer) after running the Ansible Adhoc command to save cost on your AWS Bill since they are no longer needed for this project_.
 
 ### Step 5: Provision 2 UAT Web Servers
 
