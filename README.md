@@ -185,4 +185,14 @@ git commit -m "updates"
 git push
 ```
 
-* Run the `ansible-playbook` command against the `dev` envinronment
+* Run the `ansible-playbook` command against the `dev` envinronment to remove wireshark on all your hosts.
+
+```sh
+ansible-playbook -i inventory/dev playbook/site.yml
+```
+
+* Run Asnsible Adhoc command to check if wireshark has been removed from the servers.
+
+```sh
+ansible all -i inventory/dev -m command -a "wireshark --version"
+```
