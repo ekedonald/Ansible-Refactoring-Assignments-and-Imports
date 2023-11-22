@@ -112,3 +112,11 @@ git chekout main && git pull
 ```
 
 * On your Jenkins console, you will see a build has been triggered.
+
+* Run `ansible-playbook` command against the `dev` environment using the command shown below:
+
+```sh
+ansible-playbook -i inventory/dev playbook/site.yml
+```
+
+### Step 4: 
