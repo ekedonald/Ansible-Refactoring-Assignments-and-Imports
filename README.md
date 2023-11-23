@@ -357,7 +357,7 @@ git checkout main && git pull
 * Open a new terminal and SSH into the `Jenkins-Ansible` server.
 
 ```sh
-ssh ubuntu@<public_ip_address_of_jenkins_ansible
+ssh ubuntu@<public_IP_address_of_jenkins_ansible
 ```
 
 * Set up an SSH-Agent on the Jenkins-Ansible Instance so it will be able to connect to the 2 UAT-Webservers using the following command:
@@ -378,8 +378,14 @@ cd /home/ubuntu/ansible-config-artifact
 ansible-playbook -i inventory/uat playbook/site.yml
 ```
 
+* Validate the successful configuration of the 2 UAT-Webservers with Ansible by going to the following URLs on your web browser:
 
+```sh
+http://public_IP_address_of_UAT_1_Web_Server/index.php
+```
 
+```sh
+http://public_IP_address_of_UAT_2_Web_Server/index.php
+```
 
-
-
+Your Ansible architecture now looks like this.
