@@ -339,3 +339,10 @@ git add . && git commit -m "updates" && git push --set-upstream origin uat-145
 ```
 
 * Go to your `ansible-config-mgt` repository on GitHub and click on the `Compare & pull request` button.
+
+* Click on the `Create pull request` button.
+
+* Click on the `Merge pull request` button.
+
+* Click on the `Confirm merge` button.
+
