@@ -313,5 +313,13 @@ The `main.yml` will consist of the following tasks:
      - roles/webserver
 ```
 
-* Remember that the entry point to your ansible configuration is the `site.yml` file. Therefore, you need to refer your `uat-webservers.yml` role inside `site.yml`
+* Remember that the entry point to your ansible configuration is the `site.yml` file. Therefore, you need to refer your `uat-webservers.yml` role inside `site.yml`. Update the `site.yml` to have the following configuration:
 
+```sh
+---
+- hosts: all
+- import_playbook: ../static-assignments/common.yml
+
+- hosts: uat-webservers
+- import_playbook: ../static-assignments/uat-webservers.yml
+```
