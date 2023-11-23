@@ -323,3 +323,19 @@ The `main.yml` will consist of the following tasks:
 - hosts: uat-webservers
 - import_playbook: ../static-assignments/uat-webservers.yml
 ```
+
+### Step 9: Update the `ansible-config-mgt` repository on GitHub with the latest configurations
+
+Remember you have been working on a separate branch `uat-145`, you need to get your branch peer-reviewed and pushed to the `main` branch. The following steps are taken to achieve this:
+
+* Use the following commands to check the status of your branch, add files and directories then commit changes and push your branch to GitHub:
+
+```sh
+git status
+```
+
+```sh
+git add . && git commit -m "updates" && git push --set-upstream origin uat-145
+```
+
+* Go to your `ansible-config-mgt` repository on GitHub and click on the `Compare & pull request` button.
