@@ -346,3 +346,12 @@ git add . && git commit -m "updates" && git push --set-upstream origin uat-145
 
 * Click on the `Confirm merge` button.
 
+* Head back to your terminal on VS Code, checkout from `uat-145` branch into the main and pull down the latest changes using the command shown below:
+
+```sh
+git checkout main && git pull
+```
+
+### Step 10: Run the first Ansible test
+
+
