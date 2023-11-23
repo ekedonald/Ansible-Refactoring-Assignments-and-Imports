@@ -352,6 +352,34 @@ git add . && git commit -m "updates" && git push --set-upstream origin uat-145
 git checkout main && git pull
 ```
 
-### Step 10: Run the first Ansible test
+### Step 10: Run the Ansible test
+
+* Open a new terminal and SSH into the `Jenkins-Ansible` server.
+
+```sh
+ssh ubuntu@<public_ip_address_of_jenkins_ansible
+```
+
+* Set up an SSH-Agent on the Jenkins-Ansible Instance so it will be able to connect to the 2 UAT-Webservers using the following command:
+
+```sh
+eval `ssh-agent -s` && ssh-add web11.pem && ssh-add -l
+```
+
+* Go to the `ansible-config-artifact` directory
+
+```sh
+cd /home/ubuntu/ansible-config-artifact
+```
+
+* Run your playbook against the `uat` inventory file.
+
+```sh
+ansible-playbook -i inventory/uat playbook/site.yml
+```
+
+
+
+
 
 
