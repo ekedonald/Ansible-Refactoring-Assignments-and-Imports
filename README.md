@@ -214,7 +214,7 @@ Use the following parameters when provisioning the EC2 Instance for the 2 UAT We
 
 *Instance Summary for UAT_2 Server*
 
-### Step 6: Create a new branch and a role for User Acceptance Testing then update the inventory/uat file.
+### Step 6: Create a new branch and a role for User Acceptance Testing.
 
 * Create and switch into a branch `uat-145` that will be used for User Acceptance Testingin your `ansible-config-mgt` repository.
 
@@ -245,3 +245,59 @@ cp main.yml meta && mv main.yml tasks
 cd .. ** tree webserver
 ```
 
+### Step 7: Update the `inventory/uat` file and configure the `tasks/main.yml` file
+
+* Update the `ansible-config-mgt/inventory/uat` file with IP adresses of your 2 UAT Web Servers.
+
+```sh
+[uat-webservers]
+<Web1-UAT-Server-Private-IP-Address> ansible_ssh_user='ec2-user'
+<Web2-UAT-Server-Private-IP-Address> ansible_ssh_user='ec2-user'
+```
+
+* In the tasks directory, configure the `main.yml` file to have the following configurations:
+
+1. Install and Configure Apache (`httpd` service)
+2. Clone **Tooling Website** form GitHub `https://github.com/<your-name>/tooling.git`
+3. Ensure the tolling website code is deployed to `/var/www/html` on the 2 UAT Web Servers
+4. Make sure `httpd` service is started
+
+The `main.yml` will consist of the following tasks:
+
+```sh
+---
+- name: install apache
+  become: true
+  ansible.builtin.yum:
+    name: "httpd"
+    state: present
+
+- name: install git
+  become: true
+  ansible.builtin.yum:
+    name: "git"
+    state: present
+
+- name: clone a repo
+  become: true
+  ansible.builtin.git:
+    repo: https://github.com/<your-name>/tooling.git
+    dest: /var/www/html
+    force: yes
+
+- name: copy html content to one level up
+  become: true
+  command: cp -r /var/www/html/html/ /var/www/
+
+- name: Start service httpd, if not started
+  become: true
+  ansible.builtin.service:
+    name: httpd
+    state: started
+
+- name: recursively remove /var/www/html/html/ directory
+  become: true
+  ansible.builtin.file:
+    path: /var/www/html/html
+    state: absent
+```
