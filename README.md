@@ -1,12 +1,12 @@
 # Ansible Refactoring, Assignments & Imports
-[Refactoring](https://en.wikipedia.org/wiki/Code_refactoring) means making changes to the source code without changing the expected behaviour of the software. The main idea of refactoring is to enhance code readability, increase maintainability and extensibility, reduce complexibility, add proper comments without affecting the logic.
+[Refactoring](https://en.wikipedia.org/wiki/Code_refactoring) means making changes to the source code without changing the expected behaviour of the software. The main idea of refactoring is to enhance code readability, increase maintainability and extensibility, reduce complexity, add proper comments without affecting the logic.
 
 In this case, I will move things around a little bit in the code but the overall state of the infrastructure remains the same.
 
 In this project, I will continue working with the `ansible-config-mgt` repository and make some improvements of my code such as: 
 1. Refactor Ansible Code
 2. Create Assignments
-3. Imports Functionality (i.e. allows organization of tasks and reuse when needed)
+3. Imports Functionality (i.e. allows organisation of tasks and reuse when needed)
 
 ## How To Implement Ansible Refactoring, Assignments & Imports
 The following steps are taken to implement Ansible Refactoring, Assignments & Imports on the [ansible-config-mgt repository](https://github.com/ekedonald/ansible-config-mgt):
@@ -207,7 +207,7 @@ Use the following parameters when provisioning the EC2 Instance for the 2 UAT We
 3. New Key Pair: web11
 4. Key Pair Type: RSA
 5. Private Key File Format: .pem
-6. New Secruity Group: Web-Server SG
+6. New Security Group: Web-Server SG
 7. Inbound Rules: Allow Traffic From Anywhere On Port 80 & Port 22
 
 *Instance Summary for UAT_1 Server*
@@ -216,7 +216,7 @@ Use the following parameters when provisioning the EC2 Instance for the 2 UAT We
 
 ### Step 6: Create a new branch and a role for User Acceptance Testing.
 
-* Create and switch into a branch `uat-145` that will be used for User Acceptance Testingin your `ansible-config-mgt` repository.
+* Create and switch into a branch `uat-145` that will be used for User Acceptance Testing in your `ansible-config-mgt` repository.
 
 ```sh
 git checkout -b uat-145
@@ -313,7 +313,7 @@ The `main.yml` will consist of the following tasks:
      - roles/webserver
 ```
 
-* Remember that the entry point to your ansible configuration is the `site.yml` file. Therefore, you need to refer your `uat-webservers.yml` role inside `site.yml`. Update the `site.yml` to have the following configuration:
+* Remember that the entry point to your Ansible configuration is the `site.yml` file. Therefore, you need to refer your `uat-webservers.yml` role inside `site.yml`. Update the `site.yml` to have the following configuration:
 
 ```sh
 ---
