@@ -301,3 +301,17 @@ The `main.yml` will consist of the following tasks:
     path: /var/www/html/html
     state: absent
 ```
+
+### Step 8: Reference the `Webserver` role
+
+* Within the `static-assignments` folder, create a new assignments for **uat-webservers**. Update the `uat-webservers.yml`, this is where you will reference the role:
+
+```sh
+---
+- hosts: uat-webservers
+  roles:
+     - roles/webserver
+```
+
+* Remember that the entry point to your ansible configuration is the `site.yml` file. Therefore, you need to refer your `uat-webservers.yml` role inside `site.yml`
+
