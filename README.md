@@ -214,7 +214,7 @@ Use the following parameters when provisioning the EC2 Instance for the 2 UAT We
 
 *Instance Summary for UAT_2 Server*
 
-### Step 6: Create a new branch and a role for User Acceptance Testing.
+### Step 6: Create a new branch and a role for User Acceptance Testing then update the inventory/uat file.
 
 * Create and switch into a branch `uat-145` that will be used for User Acceptance Testingin your `ansible-config-mgt` repository.
 
@@ -235,4 +235,13 @@ ansible-galaxy init webserver
 2. Create the directory/file structure manually.
 
 * I will use the **second** option since all my codes are stored in GitHub instead of using the `Ansible-Galaxy` utility on the `Jenkins Server`
+
+* To create the folder structure below, the following commands were used:
+
+```sh
+cd .. && mkdir roles && cd roles && mkdir webserver
+cd webserver && touch README.md && mkdir defaults handlers meta tasks templates
+cp main.yml meta && mv main.yml tasks
+cd .. ** tree webserver
+```
 
