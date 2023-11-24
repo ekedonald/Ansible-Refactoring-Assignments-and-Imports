@@ -126,17 +126,23 @@ mv playbooks/common.yml static-assignments
 git status
 ```
 
+![git status](./images/3.%20git%20status.png)
+
 * Add the untracked files and commit the changes using the following command:
 
 ```sh
 git add . && git commit -m "updated files and directories"
 ```
 
+![git add commit](./images/3.%20git%20add%20commit.png)
+
 * Push all changes from the `refactor` branch to the main branch.
 
 ```sh
 git push --set-upstream origin refactor
 ```
+
+![git push refactor](./images/3.%20git%20push%20refactor.png)
 
 * Go to your `ansible-config-mgt` repository on GitHub and click on the `Compare & pull request` button.
 
