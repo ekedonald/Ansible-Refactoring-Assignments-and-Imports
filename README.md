@@ -146,11 +146,19 @@ git push --set-upstream origin refactor
 
 * Go to your `ansible-config-mgt` repository on GitHub and click on the `Compare & pull request` button.
 
+![compare & pull request](./images/3.%20compare%20&%20pull%20request.png)
+
 * Click on the `Create pull request` button.
+
+![create pull request](./images/3.%20create%20pull%20request.png)
 
 * Click on the `Merge pull request` button.
 
+![merge pull request](./images/3.%20merge%20pull%20request.png)
+
 * Click on the `Confirm merge` button.
+
+![confirm merge](./images/3.%20confirm%20merge.png)
 
 * Go to the `ansible-config-mgt` on your local machine and run the following command to switch to the `main` branch and pull the changes.
 
@@ -158,7 +166,11 @@ git push --set-upstream origin refactor
 git chekout main && git pull
 ```
 
+![git checkout && git pull](./images/3.%20git%20checkout%20main%20&%20git%20pull.png)
+
 * On your Jenkins console, you will see a build has been triggered.
+
+![build triggered](./images/3.%20build%20triggered.png)
 
 * Run `ansible-playbook` command against the `dev` environment using the command shown below:
 
