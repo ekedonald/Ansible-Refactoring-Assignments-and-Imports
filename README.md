@@ -19,6 +19,8 @@ The following steps are taken to implement Ansible Refactoring, Assignments & Im
 sudo mkdir /home/ubuntu/ansible-config-artifact
 ```
 
+![mkdir ansible-config-artifact](./images/1.%20mkdir%20ansible-config-artifact.png)
+
 * Change permissions to this directory so Jenkins could save files there using the following commands:
 
 ```sh
@@ -26,13 +28,24 @@ sudo chmod -R 777 /home/ubuntu/ansible-config-artifact/
 sudo chown -R jenkins:jenkins /home/ubuntu/ansible-config-artifact/
 ```
 
+![permissions](./images/1.%20chmod%20chown%20ansible-config-artifact.png)
+
 * Log into your Jenkins Console, click on `Manage Jenkins` tab and click on `Plugins`
+
+![jenkins plugin](./images/1.%20plugins.png)
 
 * Click on `Available plugins` and type `copy artifact` in the search bar then select **Copy Artifact** plugin and click on `Install` (_Note that restarting jenkins after installing the plugin isn't necessary_).
 
+![available plugins](./images/1.%20copy%20artifact.png)
+
 * Create a new freestyle job named `save_artifacts`, give it a maximum of 2 builds to keep.
 
+![save artifacts](./images/1.%20save-artifact.png)
+![max builds](./images/1.%20general%20max%20builds%20description.png)
+
 * Configure the `build trigger` of the job to **Build after other projects are built** then link it to your `ansible` job and select **Trigger only if build is stable**.
+
+![build trigger](./images/1.%20build%20triggers.png)
 
 * Configure a `build step` to **Copy artifacts from another project**, specify the following parameters then apply and save changes:
 1. Project name: ansible
@@ -40,7 +53,13 @@ sudo chown -R jenkins:jenkins /home/ubuntu/ansible-config-artifact/
 3. Artifacts to copy: **
 4. Target directory: /home/ubuntu/ansible-config-artifact
 
+![build step](./images/1.%20copy%20artifacts%20from%20another%20project.png)
+![build step2](./images/1%20copy%20artifacts%20from%20another%20project1.png)
+
 * You will notice `save-artifacts `job has an upstream project called `ansible` which means they are connected to each other, click on the `ansible` job drop-down icon and click on **Build Now** to test if the `ansible` job will successfully trigger the `save-artifacts` job.
+
+![build now](./images/1.%20build%20now%20ansible%20.png)
+![build triggered](./images/1.%20build%20triggered%20save-artifact%20job.png)
 
 * Verify if the artifacts of the `ansible` are present in your `ansible-config-artifacts` directory on your `Jenkins-Ansible` server by running the following command:
 
