@@ -90,7 +90,19 @@ cd playbooks && touch site.yml
 
 * Create a new folder in root of the repository and name it `static-assignments` (_The **static-assignments** directory is where all other children playbooks will be stored_).
 
+```sh
+cd .. && mkdir static-assignments
+```
+
+![cd .. && mkdir static-assignments](./images/2.%20mkdir%20static-assignments.png)
+
 * Move the `common.yml` file into the `static-assignments` directory.
+
+```sh
+mv playbooks/common.yml static-assignments
+```
+
+![mv common.yml to static-assignments](./images/2.%20move%20common%20to%20static-assignment.png)
 
 * In the `site.yml` file, import `common.yml` playbook.
 
