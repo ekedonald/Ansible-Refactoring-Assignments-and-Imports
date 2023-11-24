@@ -238,11 +238,15 @@ git status
 git add common-del.yml ../playbooks/site.yml
 ```
 
+![git status add](./images/4.%20git%20status%20n%20git%20add%20common-del_yml%20..:playbooks:site_yml.png)
+
 * Commit the changes made.
 
 ```sh
 git commit -m "updates"
 ```
+
+![git commit](./images/4.%20git%20commit.png)
 
 * Push the changes to the `ansible-config-mgt` repository.
 
@@ -250,17 +254,23 @@ git commit -m "updates"
 git push
 ```
 
+![git push](./images/4.%20git%20push.png)
+
 * Run the `ansible-playbook` command against the `dev` envinronment to remove wireshark on all your hosts.
 
 ```sh
 ansible-playbook -i inventory/dev playbook/site.yml
 ```
 
+![ansible-playbook](./images/4.%20ansible-playbook%20-i%20inventory:dev%20playbooks:site.png)
+
 * Run Ansible Adhoc command to check if wireshark has been removed from all the servers.
 
 ```sh
 ansible all -i inventory/dev -m command -a "wireshark --version"
 ```
+
+![ansible adhoc command](./images/4.%20ansible%20adhoc%20command%20wireshark%20verision.png)
 
 _**Note**: Stop the EC2 Instances (i.e. Web Server 1 & 2, Database Server and Load Balancer) after running the Ansible Adhoc command to save cost on your AWS Bill since they are no longer needed for this project_.
 
