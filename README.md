@@ -178,6 +178,8 @@ git chekout main && git pull
 ansible-playbook -i inventory/dev playbook/site.yml
 ```
 
+![ansible-playbook](./images/4.%20ansible-playbook%20-i%20inventory:dev%20playbooks:site.png)
+
 ### Step 4: Create a playbook configuration file `common-del.yml` that will be used to remove the wireshark package and import the configuration file to the playbook
 
 * Create a `common-del.yml` file in the `static-assignments` directory.
@@ -185,6 +187,8 @@ ansible-playbook -i inventory/dev playbook/site.yml
 ```sh
 cd static-assignments && touch common-del.yml
 ```
+
+![cd static-assignments && touch common-del.yml](./images/4.%20cd%20static%20assignments%20and%20create%20common-del.png)
 
 * Paste the code shown below into the `common-del.yml` file
 
@@ -215,6 +219,8 @@ cd static-assignments && touch common-del.yml
       purge: yes
       autoclean: yes
 ```
+
+![common-del.yml](./images/4.%20common-del_yml.png)
 
 * Import the playbook file `common-del.yml` into the `site.yml` file.
 
