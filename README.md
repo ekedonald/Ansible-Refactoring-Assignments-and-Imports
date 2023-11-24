@@ -112,7 +112,11 @@ mv playbooks/common.yml static-assignments
 - import_playbook: ../static-assignments/common.yml
 ```
 
+![site.yml](./images/2.%20site_yml.png)
+
 * The folder structure of the `ansible-config-mgt` should look like this:
+
+![tree ansible-config-mgt](./images/2.%20tree%20ansible-config-mgt.png)
 
 ### Step 3: Merge the changes from the refactor branch into the main branch and run your playbook
 
