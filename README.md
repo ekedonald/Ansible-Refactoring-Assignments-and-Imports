@@ -67,6 +67,8 @@ sudo chown -R jenkins:jenkins /home/ubuntu/ansible-config-artifact/
 cd /home/ubuntu/ansible-config-artifact && ll
 ```
 
+![cd ansible-config-artifact && ll](./images/1.%20cd%20ansible-config-artifat%20&%20ll.png)
+
 ### Step 2: Refactor Ansible code by importing other playbooks into `site.yml`
 * Before starting to refactor the codes, go to the ansible-config-mgt directory on your local machine and pull down the latest code from the `main` branch.
 
@@ -76,11 +78,15 @@ cd /home/ubuntu/ansible-config-artifact && ll
 git checkout -b refactor
 ```
 
+![git checkout refactor](./images/2.%20git%20checkout%20-b%20refactor.png)
+
 * In the `playbooks` folder, create a new file named `site.yml` (_The `site.yml` will become a parent to all other playbooks that will be developed including `common.yml` that you created previously_).
 
 ```sh
 cd playbooks && touch site.yml
 ```
+
+![cd playbooks && touch site.yml](./images/2.%20cd%20playbooks%20&%20create%20site-yml.png)
 
 * Create a new folder in root of the repository and name it `static-assignments` (_The **static-assignments** directory is where all other children playbooks will be stored_).
 
