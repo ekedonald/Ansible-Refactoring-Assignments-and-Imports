@@ -304,7 +304,7 @@ The `main.yml` will consist of the following tasks:
 
 ### Step 8: Reference the `Webserver` role
 
-* Within the `static-assignments` folder, create a new assignments for **uat-webservers**. Update the `uat-webservers.yml`, this is where you will reference the role:
+* Within the `static-assignments` folder, create a new assignment for **uat-webservers**. Update the `uat-webservers.yml`, this is where you will reference the role:
 
 ```sh
 ---
