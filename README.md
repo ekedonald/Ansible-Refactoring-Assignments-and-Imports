@@ -423,9 +423,13 @@ Remember you have been working on a separate branch `uat-145`, you need to get y
 git status
 ```
 
+![git status](./images/9.%20git%20status.png)
+
 ```sh
 git add . && git commit -m "updates" && git push --set-upstream origin uat-145
 ```
+
+![git add commit push](./images/9.%20git%20add%20commit%20push.png)
 
 * Go to your `ansible-config-mgt` repository on GitHub and click on the `Compare & pull request` button.
 
