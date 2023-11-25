@@ -285,8 +285,10 @@ Use the following parameters when provisioning the EC2 Instance for the 2 UAT We
 6. New Security Group: Web-Server SG
 7. Inbound Rules: Allow Traffic From Anywhere On Port 80 & Port 22
 
+![UAT-1 Server](./images/5.%20instance%20summary%20UAT_1.png)
 *Instance Summary for UAT_1 Server*
 
+![UAT-2 Server](./images/5.%20instance%20summary%20UAT_2.png)
 *Instance Summary for UAT_2 Server*
 
 ### Step 6: Create a new branch and a role for User Acceptance Testing.
@@ -296,6 +298,8 @@ Use the following parameters when provisioning the EC2 Instance for the 2 UAT We
 ```sh
 git checkout -b uat-145
 ```
+
+![git checkout uat-145](./images/6.%20new%20branch%20for%20uat.png)
 
 * To create a role, you must create a directory called roles in the `ansible-config-mgt` directory. There are two ways you can this folder structure:
 
@@ -309,7 +313,7 @@ ansible-galaxy init webserver
 
 2. Create the directory/file structure manually.
 
-* I will use the **second** option since all my codes are stored in GitHub instead of using the `Ansible-Galaxy` utility on the `Jenkins Server`
+* I will use the **2nd** option since all my codes are stored in GitHub instead of using the `Ansible-Galaxy` utility on the `Jenkins Server`
 
 * To create the folder structure below, the following commands were used:
 
@@ -320,6 +324,8 @@ cp main.yml meta && mv main.yml tasks
 cd .. ** tree webserver
 ```
 
+![create folder structure](./images/6%20create%20roles:webserver%20file%20structure.png)
+
 ### Step 7: Update the `inventory/uat` file and configure the `tasks/main.yml` file
 
 * Update the `ansible-config-mgt/inventory/uat` file with IP adresses of your 2 UAT Web Servers.
@@ -329,6 +335,8 @@ cd .. ** tree webserver
 <Web1-UAT-Server-Private-IP-Address> ansible_ssh_user='ec2-user'
 <Web2-UAT-Server-Private-IP-Address> ansible_ssh_user='ec2-user'
 ```
+
+![inventory/uat file](./images/7.%20inventory:uat.png)
 
 * In the tasks directory, configure the `main.yml` file to have the following configurations:
 
