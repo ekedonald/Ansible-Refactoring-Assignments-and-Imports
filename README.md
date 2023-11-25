@@ -433,17 +433,27 @@ git add . && git commit -m "updates" && git push --set-upstream origin uat-145
 
 * Go to your `ansible-config-mgt` repository on GitHub and click on the `Compare & pull request` button.
 
+![compare & pull request](./images/9.%20compare%20&%20pull%20request.png)
+
 * Click on the `Create pull request` button.
+
+![create pull request](./images/9.%20create%20pull%20request.png)
 
 * Click on the `Merge pull request` button.
 
+![merge pull request](./images/9.%20merge%20pull%20request.png)
+
 * Click on the `Confirm merge` button.
+
+![confirm merge](./images/9.%20confirm%20merge.png)
 
 * Head back to your terminal on VS Code, checkout from `uat-145` branch into the main and pull down the latest changes using the command shown below:
 
 ```sh
 git checkout main && git pull
 ```
+
+![git checkout main && git pull](./images/9.%20git%20checkout%20&&%20git%20pull.png)
 
 ### Step 10: Run the Ansible test
 
