@@ -398,7 +398,7 @@ The `main.yml` will consist of the following tasks:
      - roles/webserver
 ```
 
-![tatic-assignments/uat-webservers.yml](./images/8.%20uat-webservers_yml.png)
+![static-assignments/uat-webservers.yml](./images/8.%20uat-webservers_yml.png)
 
 * Remember that the entry point to your Ansible configuration is the `site.yml` file. Therefore, you need to refer your `uat-webservers.yml` role inside `site.yml`. Update the `site.yml` to have the following configuration:
 
