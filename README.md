@@ -16,6 +16,12 @@ The following steps are taken to implement Ansible Refactoring, Assignments & Im
 * SSH into your `Jenkins-Ansible` server and create a directory called `ansible-config-artifact` (all the artifacts will be stored here after each build).
 
 ```sh
+ssh ubuntu@<public_IP_address_Jenkins_Ansible>
+```
+
+![ssh jenkins-ansible](./images/10.%20ssh%20jenkins%20ansible%20instance.png)
+
+```sh
 sudo mkdir /home/ubuntu/ansible-config-artifact
 ```
 
