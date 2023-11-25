@@ -422,7 +422,7 @@ Remember you have been working on a separate branch `uat-145`, you need to get y
 ```sh
 git status
 ```
-
+![cd .. ansible-config-mgt](./images/9%20cd..%20ansible-config-mgt.png)
 ![git status](./images/9.%20git%20status.png)
 
 ```sh
