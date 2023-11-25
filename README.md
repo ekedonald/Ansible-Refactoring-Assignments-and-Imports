@@ -3,7 +3,7 @@
 
 In this case, I will move things around a little bit in the code but the overall state of the infrastructure remains the same.
 
-In this project, I will continue working with the `ansible-config-mgt` repository and make some improvements of my code such as: 
+This project is a continuation of the [Ansible Automationn Project](https://github.com/ekedonald/Ansible-Automation-Project). In this project, I will continue working with the `ansible-config-mgt` repository and make some improvements of my code such as: 
 1. Refactor Ansible Code
 2. Create Assignments
 3. Imports Functionality (i.e. allows organisation of tasks and reuse when needed)
