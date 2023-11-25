@@ -385,6 +385,8 @@ The `main.yml` will consist of the following tasks:
     state: absent
 ```
 
+![tasks/main.yml](./images/7.%20tasks:main_yml.png)
+
 ### Step 8: Reference the `Webserver` role
 
 * Within the `static-assignments` folder, create a new assignment for **uat-webservers**. Update the `uat-webservers.yml`, this is where you will reference the role:
@@ -396,6 +398,8 @@ The `main.yml` will consist of the following tasks:
      - roles/webserver
 ```
 
+![tatic-assignments/uat-webservers.yml](./images/8.%20uat-webservers_yml.png)
+
 * Remember that the entry point to your Ansible configuration is the `site.yml` file. Therefore, you need to refer your `uat-webservers.yml` role inside `site.yml`. Update the `site.yml` to have the following configuration:
 
 ```sh
@@ -406,6 +410,8 @@ The `main.yml` will consist of the following tasks:
 - hosts: uat-webservers
 - import_playbook: ../static-assignments/uat-webservers.yml
 ```
+
+![site.yml](./images/8.%20%20site_yml.png)
 
 ### Step 9: Update the `ansible-config-mgt` repository on GitHub with the latest configurations
 
