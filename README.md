@@ -463,11 +463,15 @@ git checkout main && git pull
 ssh ubuntu@<public_IP_address_of_jenkins_ansible
 ```
 
+![ssh jenkins-ansible](./images/10.%20ssh%20jenkins%20ansible%20instance.png)
+
 * Set up an SSH-Agent on the Jenkins-Ansible Instance so it will be able to connect to the 2 UAT-Webservers using the following command:
 
 ```sh
 eval `ssh-agent -s` && ssh-add web11.pem && ssh-add -l
 ```
+
+![ssh-agent](./images/10.%20ssh-agent.png)
 
 * Go to the `ansible-config-artifact` directory
 
@@ -475,11 +479,15 @@ eval `ssh-agent -s` && ssh-add web11.pem && ssh-add -l
 cd /home/ubuntu/ansible-config-artifact
 ```
 
+![cd ansible-config-artifact](./images/10.%20cd%20:home:ubuntu:ansible-config-artifact.png)
+
 * Run your playbook against the `uat` inventory file.
 
 ```sh
 ansible-playbook -i inventory/uat playbook/site.yml
 ```
+
+![ansible-playbook](./images/10.%20ansible-playbook%20.png)
 
 * Validate the successful configuration of the 2 UAT-Webservers with Ansible by going to the following URLs on your web browser:
 
