@@ -3,7 +3,7 @@
 
 In this case, I will move things around a little bit in the code but the overall state of the infrastructure remains the same.
 
-This project is a continuation of the [Ansible Automationn Project](https://github.com/ekedonald/Ansible-Automation-Project). In this project, I will continue working with the `ansible-config-mgt` repository and make some improvements of my code such as: 
+This project is a continuation of the [Ansible Automationn Project](https://github.com/ekedonald/Ansible-Automation-Project). In this project, I will continue working with the [ansible-config-mgt repository](https://github.com/ekedonald/ansible-config-mgt) and make some improvements on my code such as: 
 1. Refactor Ansible Code
 2. Create Assignments
 3. Imports Functionality (i.e. allows organisation of tasks and reuse when needed)
@@ -27,7 +27,7 @@ sudo mkdir /home/ubuntu/ansible-config-artifact
 
 ![mkdir ansible-config-artifact](./images/1.%20mkdir%20ansible-config-artifact.png)
 
-* Change permissions to this directory so Jenkins could save files there using the following commands:
+* Change permissions no this directory so Jenkins could save files there using the following commands:
 
 ```sh
 sudo chmod -R 777 /home/ubuntu/ansible-config-artifact/
@@ -62,7 +62,7 @@ sudo chown -R jenkins:jenkins /home/ubuntu/ansible-config-artifact/
 ![build step](./images/1.%20copy%20artifacts%20from%20another%20project.png)
 ![build step2](./images/1%20copy%20artifacts%20from%20another%20project1.png)
 
-* You will notice `save-artifacts `job has an upstream project called `ansible` which means they are connected to each other, click on the `ansible` job drop-down icon and click on **Build Now** to test if the `ansible` job will successfully trigger the `save-artifacts` job.
+* You will notice the `save-artifacts `job has an upstream project called `ansible` which means they are connected to each other, click on the `ansible` job drop-down icon and click on **Build Now** to test if the `ansible` job will successfully trigger the `save-artifacts` job.
 
 ![build now](./images/1.%20build%20now%20ansible%20.png)
 ![build triggered](./images/1.%20build%20triggered%20save-artifact%20job.png)
@@ -76,7 +76,7 @@ cd /home/ubuntu/ansible-config-artifact && ll
 ![cd ansible-config-artifact && ll](./images/1.%20cd%20ansible-config-artifat%20&%20ll.png)
 
 ### Step 2: Refactor Ansible code by importing other playbooks into `site.yml`
-* Before starting to refactor the codes, go to the ansible-config-mgt directory on your local machine and pull down the latest code from the `main` branch.
+* Before starting to refactor the codes, go to the `ansible-config-mgt` directory on your local machine and pull down the latest code from the `main` branch.
 
 * Create a new branch `refactor` and switch into the branch using the command below:
 
@@ -228,11 +228,13 @@ cd static-assignments && touch common-del.yml
 
 ![common-del.yml](./images/4.%20common-del_yml.png)
 
-* Import the playbook file `common-del.yml` into the `site.yml` file.
+* Import the playbook file `common-del.yml` and comment the `common.yml` import in the `site.yml` file.
 
 ```sh
 - import_playbook: ../static-assignments/common-del.yml
 ```
+
+![site.yml](./images/4.%20site_yml.png)
 
 * Run the following command to view the changes and add the untracked files in the `ansible-config-mgt` repository:
 
