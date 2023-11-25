@@ -503,4 +503,5 @@ http://public_IP_address_of_UAT_2_Web_Server/index.php
 
 ![http uat-2](./images/10.%20http%20uat%202%20web%20server.png)
 
-Your Ansible architecture now looks like this.
+Your Ansible architecture now looks like this:
+![final architecture](./images/final%20architecture.png)
