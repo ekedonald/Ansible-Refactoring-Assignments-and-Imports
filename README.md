@@ -166,7 +166,7 @@ git push --set-upstream origin refactor
 
 ![confirm merge](./images/3.%20confirm%20merge.png)
 
-* Go to the `ansible-config-mgt` on your local machine and run the following command to switch to the `main` branch and pull the changes.
+* Go to the `ansible-config-mgt` directory on your local machine and run the following command to switch to the `main` branch and pull the changes.
 
 ```sh
 git chekout main && git pull
